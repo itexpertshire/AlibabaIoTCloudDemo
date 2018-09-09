@@ -24,10 +24,13 @@ sensor = W1ThermSensor()
 
 while True:
     temperature = sensor.get_temperature()
+    timevalue = time.time()
+    print ("time %s" %timevalue)
     print("The temperature is %s celsius" % temperature)    
-    message = "{ 'temperature': %s }" % temperature
+    message = "{ 'temperature': %s, 'time': %s }" % (temperature,timevalue)
+    print (base64.urlsafe_b64encode(message)) 
     request.set_MessageContent(base64.urlsafe_b64encode(message)) #JSON message Base64 String
     request.set_Qos(0)
     result = clt.do_action_with_exception(request)
     print 'result : ' + result
-    time.sleep(10)
+    time.sleep(60)
