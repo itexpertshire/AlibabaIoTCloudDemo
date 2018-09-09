@@ -6,8 +6,8 @@ import base64
 from w1thermsensor import W1ThermSensor
 
 
-accessKeyId = 'LTAIqo5BFYdWSvZD'
-accessKeySecret = 'kS2ezP0t81QHBwSTciUQybGxmwrHQP'
+accessKeyId = ''
+accessKeySecret = ''
 clt = client.AcsClient(accessKeyId, accessKeySecret, 'cn-shanghai')
 productKey = 'a1hbm0FZrDs'
 deviceName = 'VWyNtvJbQCi9D0PIovfmrg'
